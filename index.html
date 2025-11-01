@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kelurahan Kalabbbirang – Portal Resmi</title>
+  <meta name="description" content="Portal layanan, berita, dan informasi Kelurahan Kalabbbirang." />
+  <link rel="icon" href="img/WhatsApp Image 2025-11-01 at 19.51.49_51e37e80.jpg" class="w-12 h-12 rounded-lg overflow-hidden"> 
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Optional: line-clamp polyfill-ish */
+    .line-clamp-3 {display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  </style>
+</head>
+<body class="text-gray-900">
+  <!-- Top ribbon -->
+  <div class="w-full bg-gray-900 text-white text-xs">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
+      <p class="truncate" id="alamat">Jl.Chaeruddin Dg. Ngampa No. 12, Kelurahan Kalabbbirang, 92211</p>
+      <p class="hidden md:block" id="kontak-top">+62 882-9471-4015 · kelurahankalabbirang01@gmail.com</p>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b">
+    <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-lg overflow-hidden"><img src="img/WhatsApp Image 2025-11-01 at 19.51.49_51e37e80.jpg" 
+       alt="Foto" 
+       class="w-full h-full object-cover"></div>
+
+        <div>
+          <div class="font-extrabold leading-5">Kelurahan Kalabbirang</div>
+          <div class="text-xs text-gray-600 -mt-0.5">Kabupaten Takalar, Sulawesi Selatan</div>
+        </div>
+      </div>
+      <nav class="hidden md:flex items-center gap-1">
+        <a href="#beranda" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-black/5 transition">Beranda</a>
+        <a href="#profil" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-black/5 transition">Profil</a>
+        <a href="#layanan" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-black/5 transition">Layanan</a>
+        <a href="#berita" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-black/5 transition">Berita</a>
+        <a href="#pengumuman" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-black/5 transition">Pengumuman</a>
+        <a href="#galeri" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-black/5 transition">Galeri</a>
+        <a href="#kontak" class="px-3 py-2 rounded-xl text-sm font-medium hover:bg-black/5 transition">Kontak</a>
+      </nav>
+      <button id="menuBtn" class="md:hidden rounded-xl border px-3 py-2">Menu</button>
+    </div>
+    <div id="mobileNav" class="hidden md:hidden border-t bg-white">
+      <div class="px-4 py-3 grid gap-2">
+        <a href="#beranda" class="py-2">Beranda</a>
+        <a href="#profil" class="py-2">Profil</a>
+        <a href="#layanan" class="py-2">Layanan</a>
+        <a href="#berita" class="py-2">Berita</a>
+        <a href="#pengumuman" class="py-2">Pengumuman</a>
+        <a href="#galeri" class="py-2">Galeri</a>
+        <a href="#kontak" class="py-2">Kontak</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="beranda" class="relative">
+    <div class="absolute inset-0 -z-10">
+      <img alt="Kalabbbirang Hero" src="img/WhatsApp Image 2025-11-01 at 19.51.49_51e37e80.jpg" class="w-full h-[64vh] object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 h-[64vh] flex items-end">
+      <div class="mb-12">
+        <span class="inline-block text-xs font-semibold tracking-wide uppercase bg-white/80 backdrop-blur px-2.5 py-1 rounded-full border">Website Resmi</span>
+        <h1 class="mt-3 text-3xl md:text-5xl font-black leading-tight">Kelurahan Kalabbirang</h1>
+        <p class="mt-2 text-gray-700 max-w-2xl">Pusat informasi layanan administrasi, berita kegiatan, dan transparansi pemerintahan Kalabbirang.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#layanan" class="rounded-xl px-4 py-2 border shadow bg-white hover:shadow-md transition">Lihat Layanan</a>
+          <a href="#berita" class="rounded-xl px-4 py-2 border bg-gray-900 text-white hover:bg-gray-800 transition">Berita Terbaru</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section helper -->
+  <template id="sectionTpl"></template>
+
+  <!-- Sekilas -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Sekilas Kalabbbirang</h2>
+        <p class="text-gray-600 mt-2 max-w-2xl">Data singkat untuk gambaran umum Kelurahan Kalabbbirang.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="flex flex-col items-center justify-center rounded-2xl border p-5 shadow-sm bg-white/70 backdrop-blur"><div class="text-2xl font-bold tracking-tight">6.560 jiwa</div><div class="text-xs text-gray-600 mt-1">Jumlah Penduduk (estimasi)</div></div>
+        <div class="flex flex-col items-center justify-center rounded-2xl border p-5 shadow-sm bg-white/70 backdrop-blur"><div class="text-2xl font-bold tracking-tight">3,52 km²</div><div class="text-xs text-gray-600 mt-1">Luas Wilayah</div></div>
+        <div class="flex flex-col items-center justify-center rounded-2xl border p-5 shadow-sm bg-white/70 backdrop-blur"><div class="text-2xl font-bold tracking-tight">0 RW / 0 RT</div><div class="text-xs text-gray-600 mt-1">RW / RT</div></div>
+        <div class="flex flex-col items-center justify-center rounded-2xl border p-5 shadow-sm bg-white/70 backdrop-blur"><div class="text-2xl font-bold tracking-tight">92211</div><div class="text-xs text-gray-600 mt-1">Kode Pos</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Profil -->
+  <section id="profil" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Profil Kelurahan</h2>
+        <p class="text-gray-600 mt-2 max-w-2xl">Struktur organisasi & visi misi singkat.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="rounded-2xl border shadow-sm bg-white overflow-hidden">
+          <div class="p-5">
+            <h3 class="font-semibold">Visi</h3>
+            <p class="mt-2 text-sm text-gray-700">“Mewujudkan Kelurahan Kalabbbirang yang Tertib, Transparan, dan Sejahtera.”</p>
+            <h3 class="mt-6 font-semibold">Misi</h3>
+            <ul class="mt-2 text-sm text-gray-700 list-disc pl-5 space-y-1">
+              <li>Peningkatan kualitas pelayanan administrasi kependudukan.</li>
+              <li>Penguatan partisipasi masyarakat dalam pembangunan.</li>
+              <li>Transparansi anggaran dan informasi publik.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="rounded-2xl border shadow-sm bg-white overflow-hidden">
+          <img alt="Lurah" src="img/WhatsApp Image 2025-11-01 at 19.51.49_51e37e80.jpg" class="w-full h-44 object-cover" />
+          <div class="p-5">
+            <h3 class="font-semibold">Lurah</h3>
+            <p class="text-sm text-gray-700">Zukri, S.E</p>
+            <p class="text-xs text-gray-500">NIP : 198503102011011016</p>
+          </div>
+        </div>
+        <div class="rounded-2xl border shadow-sm bg-white overflow-hidden">
+          <div class="p-5">
+            <h3 class="font-semibold">Kontak & Jam Layanan</h3>
+            <ul class="mt-2 text-sm text-gray-700 space-y-2">
+            <li><strong>Alamat:</strong> Jl. Chaeruddin Dg. Ngampa No.12, Kalabbirang, 92211</li>
+            <li><strong>Telepon:</strong> +62 813-0000-0000</li>
+            <li><strong>Email:</strong> admin@kalabbirang.go.id</li>
+            <li>
+                <strong>Jam:</strong> Senin–Kamis 07.30–16.00<br>
+                <span class="ml-9">Jumat 07.30–16.30</span>
+            </li>
+            </ul>
+
+
+            <div class="mt-4 flex gap-2">
+              <a href="#kontak" class="rounded-xl px-4 py-2 border hover:bg-black/5">Arahkan ke Peta</a>
+              <a href="#layanan" class="rounded-xl px-4 py-2 border bg-gray-100">Ambil Antrian</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Layanan -->
+  <section id="layanan" class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Layanan Administrasi</h2>
+        <p class="text-gray-600 mt-2 max-w-2xl">Klik layanan untuk informasi syarat & alur.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Item layanan start -->
+        <a href="#" class="group">
+          <div class="rounded-2xl border shadow-sm bg-white overflow-hidden">
+            <div class="p-5">
+              <div class="text-3xl" aria-hidden>📄</div>
+              <h3 class="mt-3 font-semibold group-hover:underline underline-offset-4">Surat Keterangan (Domisili, Usaha, dll)</h3>
+              <p class="mt-1 text-sm text-gray-600">Form permohonan & verifikasi berkas.</p>
+              <div class="mt-4 text-sm">Selengkapnya →</div>
+            </div>
+          </div>
+        </a>
+        <a href="#" class="group">
+          <div class="rounded-2xl border shadow-sm bg-white overflow-hidden">
+            <div class="p-5">
+              <div class="text-3xl" aria-hidden>🧑‍🤝‍🧑</div>
+              <h3 class="mt-3 font-semibold group-hover:underline underline-offset-4">Pelayanan KTP/KK</h3>
+              <p class="mt-1 text-sm text-gray-600">Pengantar ke Dinas Dukcapil.</p>
+              <div class="mt-4 text-sm">Selengkapnya →</div>
+            </div>
+          </div>
+        </a>
+        <a href="#" class="group">
+          <div class="rounded-2xl border shadow-sm bg-white overflow-hidden">
+            <div class="p-5">
+              <div class="text-3xl" aria-hidden>🏠</div>
+              <h3 class="mt-3 font-semibold group-hover:underline underline-offset-4">RT/RW Online</h3>
+              <p class="mt-1 text-sm text-gray-600">Rekomendasi lingkungan & persetujuan setempat.</p>
+              <div class="mt-4 text-sm">Selengkapnya →</div>
+            </div>
+          </div>
+        </a>
+        <a href="#" class="group">
+          <div class="rounded-2xl border shadow-sm bg-white overflow-hidden">
+            <div class="p-5">
+              <div class="text-3xl" aria-hidden>📊</div>
+              <h3 class="mt-3 font-semibold group-hover:underline underline-offset-4">Transparansi Dana Kelurahan</h3>
+              <p class="mt-1 text-sm text-gray-600">Ringkasan APBKel & realisasi.</p>
+              <div class="mt-4 text-sm">Selengkapnya →</div>
+            </div>
+          </div>
+        </a>
+        <a href="#" class="group">
+          <div class="rounded-2xl border shadow-sm bg-white overflow-hidden">
+            <div class="p-5">
+              <div class="text-3xl" aria-hidden>🎫</div>
+              <h3 class="mt-3 font-semibold group-hover:underline underline-offset-4">Antrian Layanan</h3>
+              <p class="mt-1 text-sm text-gray-600">Ambil nomor antrian secara online.</p>
+              <div class="mt-4 text-sm">Selengkapnya →</div>
+            </div>
+          </div>
+        </a>
+        <a href="#" class="group">
+          <div class="rounded-2xl border shadow-sm bg-white overflow-hidden">
+            <div class="p-5">
+              <div class="text-3xl" aria-hidden>💬</div>
+              <h3 class="mt-3 font-semibold group-hover:underline underline-offset-4">Lapor Warga</h3>
+              <p class="mt-1 text-sm text-gray-600">Sampaikan aspirasi/aduan Anda.</p>
+              <div class="mt-4 text-sm">Selengkapnya →</div>
+            </div>
+          </div>
+        </a>
+        <!-- Item layanan end -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Berita -->
+  <section id="berita" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Berita Terbaru</h2>
+        <p class="text-gray-600 mt-2 max-w-2xl">Kegiatan & informasi terbaru dari Kelurahan.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="rounded-2xl border shadow-sm bg-white overflow-hidden">
+          <img alt="Berita 1" src="img/fotopenari.jpg" class="w-full h-40 object-cover" />
+          <a href="#" class="block p-5 group">
+            <p class="text-xs text-gray-500">31 OKT 2025</p>
+            <h3 class="mt-1 font-semibold group-hover:underline underline-offset-4">Sepekan Mengejar Imunisasi</h3>
+            <p class="mt-2 text-sm text-gray-600 line-clamp-3">Dalam rangka hari Kesehatan Nasional,Puskesmas Pattallassang mengadakan kegiatan pemberian imunisasi serentak. </p>
+          </a>
+        </div>
+        <div class="rounded-2xl border shadow-sm bg-white overflow-hidden">
+          <img alt="Berita 2" src="img/foto3.jpg" class="w-full h-40 object-cover" />
+          <a href="#" class="block p-5 group">
+            <p class="text-xs text-gray-500">31 Okt 2025</p>
+            <h3 class="mt-1 font-semibold group-hover:underline underline-offset-4">Kerja Bakti Kelurahan Kalabbirang</h3>
+            <p class="mt-2 text-sm text-gray-600 line-clamp-3">Warga bergotong royong membersihkan saluran air sebagai antisipasi musim hujan.</p>
+          </a>
+        </div>
+        <div class="rounded-2xl border shadow-sm bg-white overflow-hidden">
+          <img alt="Berita 3" src="img/mbg.jpg" class="w-full h-40 object-cover" />
+          <a href="#" class="block p-5 group">
+            <p class="text-xs text-gray-500">30 Okt 2025</p>
+            <h3 class="mt-1 font-semibold group-hover:underline underline-offset-4">Monitoring Ke Dapur MBG SPPG Hotel Kalampa</h3>
+            <p class="mt-2 text-sm text-gray-600 line-clamp-3">Lurah memantau dapur MBG SPPG Hotel Kalampa dan memastikan standar gizi terpenuhi</p>
+          </a>
+        </div>
+      </div>
+      <div class="mt-6"><a href="#" class="text-sm font-semibold">Arsip Berita →</a></div>
+    </div>
+  </section>
+
+  <!-- Pengumuman -->
+  <section id="pengumuman" class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Pengumuman</h2>
+        <p class="text-gray-600 mt-2 max-w-2xl">Informasi penting untuk warga Kalabbirang.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="rounded-2xl border shadow-sm bg-white overflow-hidden">
+          <div class="p-5">
+            <h3 class="font-semibold">Layanan Darurat</h3>
+            <p class="text-sm text-gray-700 mt-2">Layanan darurat hubungi +62 882-9471-4015.</p>
+          </div>
+        </div>
+        <div class="rounded-2xl border shadow-sm bg-white overflow-hidden">
+          <div class="p-5">
+            <h3 class="font-semibold">Agenda Musrenbang Kelurahan</h3>
+            <p class="text-sm text-gray-700 mt-2">Musyawarah Perencanaan Pembangunan di Aula Kantor, 20 Nov 2025 pukul 09.00 WITA.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeri -->
+  <section id="galeri" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Galeri Kegiatan</h2>
+        <p class="text-gray-600 mt-2 max-w-2xl">Dokumentasi foto kegiatan warga & aparatur.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <img alt="Galeri" class="w-full aspect-[4/3] object-cover rounded-xl" src="img/foto1.jpg" />
+        <img alt="Galeri" class="w-full aspect-[4/3] object-cover rounded-xl" src="img/foto2.jpg" />
+        <img alt="Galeri" class="w-full aspect-[4/3] object-cover rounded-xl" src="img/foto3.jpg" />
+        <img alt="Galeri" class="w-full aspect-[4/3] object-cover rounded-xl" src="img/foto4.jpg" />
+        <img alt="Galeri" class="w-full aspect-[4/3] object-cover rounded-xl" src="img/foto5.jpg" />
+        <img alt="Galeri" class="w-full aspect-[4/3] object-cover rounded-xl" src="img/foto6.jpg" />
+        <img alt="Galeri" class="w-full aspect-[4/3] object-cover rounded-xl" src="img/foto7.jpg" />
+        <img alt="Galeri" class="w-full aspect-[4/3] object-cover rounded-xl" src="img/foto8.jpg" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak & Peta -->
+  <section id="kontak" class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Kontak & Lokasi</h2>
+        <p class="text-gray-600 mt-2 max-w-2xl">Silakan datang sesuai jam layanan atau hubungi kami terlebih dahulu.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6 items-start">
+        <div class="rounded-2xl border shadow-sm bg-white overflow-hidden">
+          <div class="p-5">
+            <h3 class="font-semibold">Detail Kontak</h3>
+            <ul class="mt-2 text-sm text-gray-700 space-y-2">
+              <li><strong>Alamat:</strong> Jl. Chaeruddin Dg. Ngampa No.12, Kalabbbirang, 92211</li>
+              <li><strong>Telepon:</strong> +62 882-9471-4015</li>
+              <li><strong>Email:</strong> kelurahankalabbirang01@gmail.com</li>
+              <li><pre><strong>Jam Layanan:</strong> Senin–Kamis 07.30–16.00 WITA 
+              <span class="">Jumat 07.30–16.30</span></pre>
+            </li>
+              
+            </ul>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <a class="rounded-xl border px-3 py-2" href="https://wa.me/6288294714015" target="_blank" rel="noreferrer">WhatsApp</a>
+              <a class="rounded-xl border px-3 py-2" href="mailto:kelurahankalabbirang01@gmail.com">Email</a>
+              <a class="rounded-xl border px-3 py-2" href="https://wa.me/6288294714015" target="_blank">Form Pengaduan</a>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl border shadow-sm bg-white overflow-hidden">
+          <div class="aspect-video w-full">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7979.982757480729!2d119.4248257!3d-5.4261888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbed83ce53448bd%3A0xeb63ac4d0dbf93f3!2sKalabbirang%2C%20Kec.%20Pattallassang%2C%20Kabupaten%20Takalar%2C%20Sulawesi%20Selatan!5e0!3m2!1sid!2sid!4v1730440000000!5m2!1sid!2sid"
+                width="100%"
+                height="100%"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-4 gap-8">
+      <div>
+        <div class="font-extrabold text-lg">Kelurahan Kalabbbirang</div>
+        <p class="text-sm text-gray-300 mt-2 max-w-xs">Portal resmi layanan dan informasi masyarakat Kalabbbirang.</p>
+      </div>
+      <div>
+        <div class="font-semibold">Tautan</div>
+        <div class="mt-3 grid gap-2 text-sm text-gray-300">
+          <a href="#profil" class="hover:text-white">Profil</a>
+          <a href="#layanan" class="hover:text-white">Layanan</a>
+          <a href="#berita" class="hover:text-white">Berita</a>
+          <a href="#pengumuman" class="hover:text-white">Pengumuman</a>
+        </div>
+      </div>
+      <div>
+        <div class="font-semibold">Kontak</div>
+        <div class="mt-3 text-sm text-gray-300 space-y-1">
+          <div>Jl. Chaeruddin Dg. Ngampa No.12, Kalabbbirang, 92211</div>
+          <div>+62 882-9471-4015</div>
+          <div>kelurahankalabbirang01@gmail.com</div>
+        </div>
+      </div>
+      <div>
+        <div class="font-semibold">Jam Layanan</div>
+        <div class="mt-3 text-sm text-gray-300">Senin–Kamis 07.30–16.00 WITA
+        <br>
+        <span class="">Jumat 07.30–16.30</span>
+        </div>
+        <div class="mt-4 text-xs text-gray-400">© <span id="year"></span> Kelurahan Kalabbbirang. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Tahun dinamis
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Mobile menu toggle
+    const btn = document.getElementById('menuBtn');
+    const nav = document.getElementById('mobileNav');
+    btn.addEventListener('click', () => nav.classList.toggle('hidden'));
+    // Tutup menu ketika klik anchor
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.add('hidden')));
+  </script>
+</body>
+</html>
